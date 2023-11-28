@@ -29,8 +29,7 @@ void get_token(char* row, char* strtics)
 int get_realtics(char* resultfile)
 {
     FILE* fp;
-    size_t len;
-    char* row;
+    char row[80];
     char strtics[16];
     int realtics;
     int is_found = 0;
@@ -40,17 +39,12 @@ int get_realtics(char* resultfile)
         return 0;
     }
 
-    while (getline(&row, &len, fp) != -1 && !is_found) {
+    while(fgets(row, 80, fp)) {
         printf("%s", row);
         if (strncmp(row, "timed ", sizeof ("timed ") - 1) == 0) {
             get_token(row, strtics);
             is_found = 1;
         }
-    }
-
-    // clean up
-    if (row) {
-        free(row);
     }
     fclose(fp);
 
