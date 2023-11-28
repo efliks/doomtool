@@ -11,8 +11,6 @@ something like this:
 Doomtool will start a DOOM timedemo, intercept realtics from the output, 
 and convert them to frames per second.
 
-So much easier than convering them manually at every DOOM benchmark!
-
 ## Installation instructions
 
 To compile Doomtool, use WATCOM 1.9. Simply run wmake in the build folder:
