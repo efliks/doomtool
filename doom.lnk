@@ -1,0 +1,10 @@
+
+# doom.exe linker directive file
+
+option stack=20480
+option verbose
+libpath %WATCOM%/lib286
+libpath %WATCOM%/lib286/dos
+name doom
+
+file doom.obj

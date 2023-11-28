@@ -1,0 +1,17 @@
+all: doomtool.exe
+
+doomtool.exe: doomtool.obj
+	wlink @doomtool.lnk
+
+doom.exe: doom.obj
+	wlink @doom.lnk
+
+doomtool.obj: doomtool.c
+	wcc -3 -fpi -ml -q doomtool.c
+
+doom.obj: doom.c
+	wcc -3 -q doom.c
+
+clean: .symbolic
+	del doomtool.obj doomtool.exe
+	del doom.obj doom.exe

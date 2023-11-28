@@ -1,0 +1,11 @@
+
+# doomtool.exe linker directive file
+
+option stack=20480
+option verbose
+libpath %WATCOM%/lib286
+libpath %WATCOM%/lib286/dos
+lib emu87.lib
+name doomtool
+
+file doomtool.obj
