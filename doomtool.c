@@ -168,8 +168,6 @@ int main(int argc, char* argv[])
     int exitcode, realtics;
     char tempfile[13];
 
-    printf("** doomtool %s by efliks **\n", GIT_VERSION);
-
     exitcode = create_tempfile(tempfile);
     if (exitcode == 0) {
         exitcode = launch_doom_wrapper(argc, argv, tempfile);
@@ -182,6 +180,7 @@ int main(int argc, char* argv[])
     }
 
     destroy_tempfile(tempfile);
+    printf("Thanks for using doomtool %s\n", GIT_VERSION);
 
     return exitcode;
 }
