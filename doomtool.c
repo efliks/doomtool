@@ -11,6 +11,8 @@
 #include <string.h>
 #include <time.h>
 
+#include "gitver.h"
+
 void get_token(char* row, char* strtics)
 {
     char* p = strtok(row, " ");
@@ -40,7 +42,6 @@ int get_realtics(char* resultfile)
     }
 
     while(fgets(row, 80, fp)) {
-        printf("%s", row);
         if (strncmp(row, "timed ", sizeof ("timed ") - 1) == 0) {
             get_token(row, strtics);
             is_found = 1;
@@ -51,11 +52,6 @@ int get_realtics(char* resultfile)
     if (!is_found) {
         return 0;
     }
-
-    strcpy(row, "Realtics: ");
-    strcat(row, strtics);
-    strcat(row, "\n");
-    printf(row);
 
     realtics = atoi(strtics);
     if (realtics == 0) {
@@ -171,6 +167,8 @@ int main(int argc, char* argv[])
 {
     int exitcode, realtics;
     char tempfile[13];
+
+    printf("** doomtool %s by efliks **\n", GIT_VERSION);
 
     exitcode = create_tempfile(tempfile);
     if (exitcode == 0) {
