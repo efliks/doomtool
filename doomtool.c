@@ -154,7 +154,7 @@ void compute_fps(int realtics)
     double fps;
     char strfps[16], row[80];
 
-    fps = 74960. / (double)realtics;
+    fps = 74690. / (double)realtics;
     sprintf(strfps, "%f", fps);
 
     strcpy(row, "Your FPS is: ");
